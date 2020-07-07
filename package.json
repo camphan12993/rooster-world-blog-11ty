@@ -1,0 +1,19 @@
+{
+  "name": "rooster-world-blog-11ty",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/camphan12993/rooster-world-blog-11ty.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/camphan12993/rooster-world-blog-11ty/issues"
+  },
+  "homepage": "https://github.com/camphan12993/rooster-world-blog-11ty#readme"
+}
