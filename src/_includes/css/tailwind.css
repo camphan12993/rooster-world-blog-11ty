@@ -2,14 +2,45 @@
 
 @tailwind components;
 
+/* format */
+html {
+  scroll-behavior: smooth;
+}
+
+/* global */
+html,
+body {
+  font-family: 'Nunito', sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+}
+h1 {
+  @apply text-6xl;
+}
+h2 {
+  @apply text-4xl;
+}
+h3 {
+  @apply text-2xl;
+}
+
 /* header */
 .menu {
   visibility: hidden;
   opacity: 0;
+  z-index: 0;
 }
 .menu.active {
   visibility: inherit;
   opacity: 1;
+  z-index: 10;
+  background-color: white;
 }
 
 .menu-item {
@@ -17,7 +48,7 @@
 }
 
 .menu-item.active {
-  @apply bg-blue-300;
+  @apply bg-orange-200;
 }
 
 @tailwind utilities;

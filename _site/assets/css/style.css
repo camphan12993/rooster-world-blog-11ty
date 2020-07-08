@@ -629,16 +629,53 @@ video {
   }
 }
 
+/* format */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* global */
+
+html,
+body {
+  font-family: 'Nunito', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 2.25rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
 /* header */
 
 .menu {
   visibility: hidden;
   opacity: 0;
+  z-index: 0;
 }
 
 .menu.active {
   visibility: inherit;
   opacity: 1;
+  z-index: 10;
+  background-color: white;
 }
 
 .menu-item {
@@ -647,8 +684,8 @@ video {
 
 .menu-item.active {
   --bg-opacity: 1;
-  background-color: #90cdf4;
-  background-color: rgba(144, 205, 244, var(--bg-opacity));
+  background-color: #feebc8;
+  background-color: rgba(254, 235, 200, var(--bg-opacity));
 }
 
 .space-y-0 > :not(template) ~ :not(template) {
@@ -23645,14 +23682,6 @@ video {
 
 .transition-transform {
   transition-property: transform;
-}
-
-.transition-maxHeight {
-  transition-property: max-height;
-}
-
-.transition-height {
-  transition-property: height;
 }
 
 .ease-linear {
@@ -46730,14 +46759,6 @@ video {
 
   .sm\:transition-transform {
     transition-property: transform;
-  }
-
-  .sm\:transition-maxHeight {
-    transition-property: max-height;
-  }
-
-  .sm\:transition-height {
-    transition-property: height;
   }
 
   .sm\:ease-linear {
@@ -69818,14 +69839,6 @@ video {
     transition-property: transform;
   }
 
-  .md\:transition-maxHeight {
-    transition-property: max-height;
-  }
-
-  .md\:transition-height {
-    transition-property: height;
-  }
-
   .md\:ease-linear {
     transition-timing-function: linear;
   }
@@ -92904,14 +92917,6 @@ video {
     transition-property: transform;
   }
 
-  .lg\:transition-maxHeight {
-    transition-property: max-height;
-  }
-
-  .lg\:transition-height {
-    transition-property: height;
-  }
-
   .lg\:ease-linear {
     transition-timing-function: linear;
   }
@@ -115988,14 +115993,6 @@ video {
 
   .xl\:transition-transform {
     transition-property: transform;
-  }
-
-  .xl\:transition-maxHeight {
-    transition-property: max-height;
-  }
-
-  .xl\:transition-height {
-    transition-property: height;
   }
 
   .xl\:ease-linear {
