@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="assets/css/style.css" rel="stylesheet"/>
+    <title>welcome to our blog</title>
+    
+    <script>
+      
+      function toggleNav() {
+  var mainNav = document.getElementById('nav-menu');
+  var navBtn = document.getElementById('nav-btn');
+  mainNav.classList.toggle('active');
+  navBtn.classList.toggle('open');
+}
+
+    
+    </script>
+  </head>
+  <body>
+  <header>
+  <nav
+    class="relative flex items-center justify-between flex-wrap px-6 py-6 md:py-4"
+  >
+    <div class="flex items-center flex-shrink-0 text-white mr-6">
+      <span class="font-semibold text-xl tracking-tight text-blue-800"
+        >Rooster world</span
+      >
+    </div>
+    <span
+      class="block md:hidden text-blue-800 hover:text-blue-600"
+      onclick="toggleNav()"
+      id="nav-btn"
+    >
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        data-prefix="fas"
+        data-icon="align-justify"
+        class="svg-inline--fa fa-align-justify fa-w-14 h-6 w-6"
+        role="img"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 448 512"
+      >
+        <path
+          fill="currentColor"
+          d="M432 416H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-128H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-128H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-128H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"
+        ></path>
+      </svg>
+    </span>
+    <div
+      class="menu transition duration-500 px-6 absolute top-full left-0 right-0 md:relative md:px-0 md:visible md:opacity-100"
+      id="nav-menu"
+    >
+      <div
+        class="block rounded shadow-lg overflow-hidden md:flex md:items-center"
+      >
+        <a
+          class="menu-item block px-4 py-3 text-blue-800 hover:text-blue-600 transition duration-300 md:text-center active"
+          href="#"
+        >
+          Home
+        </a>
+        <a
+          class="menu-item block px-4 py-3 text-blue-800 hover:text-blue-600 transition duration-300 md:text-center"
+          href="#"
+        >
+          Coding
+        </a>
+        <a
+          class="menu-item block px-4 py-3 text-blue-800 hover:text-blue-600 transition duration-300 md:text-center"
+          href="#"
+        >
+          3D World
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+    <main>
+      
+    </main>
+  </body>
+</html>
+  </head>
+</html>

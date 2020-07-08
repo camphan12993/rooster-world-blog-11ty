@@ -1,0 +1,23 @@
+@tailwind base;
+
+@tailwind components;
+
+/* header */
+.menu {
+  visibility: hidden;
+  opacity: 0;
+}
+.menu.active {
+  visibility: inherit;
+  opacity: 1;
+}
+
+.menu-item {
+  min-width: 8rem;
+}
+
+.menu-item.active {
+  @apply bg-blue-300;
+}
+
+@tailwind utilities;
