@@ -10,7 +10,7 @@
       {% include js/main.js %}
     {% endcapture %}
     <script>
-      {{ js | safe }}
+      {{ js | jsmin | safe  }}
     </script>
   </head>
   <body>
