@@ -49,7 +49,7 @@ module.exports = function (config) {
     author: 'Cam Phan',
   });
 
-  config.addPassthroughCopy('src/assets/css');
+  config.addPassthroughCopy('src/assets');
   config.addPassthroughCopy('src/admin');
   return {
     dir: {
