@@ -3,31 +3,31 @@
   <head>
     <meta charset="UTF-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Eleventy lets you gather items together into collections in a variety of ways. - Foobar Site</title>
+    <title>The purpose of this article is to make our Angular template code readable and enable a high-caliber performance by following the right practices. It&apos;s very useful to have good practices in place for an Angular template to overcome the future performance-related issues in the enterprise application. - Rooster World Blog</title>
 
-<meta name="description" content="Eleventy lets you gather items together into collections in a variety of ways.">
+<meta name="description" content="The purpose of this article is to make our Angular template code readable and enable a high-caliber performance by following the right practices. It&apos;s very useful to have good practices in place for an Angular template to overcome the future performance-related issues in the enterprise application.">
 <meta name="robots" content="index,follow">
 <meta name="author" content="Cam Phan">
 
 <link rel="canonical" href="https://blog.rooster-world.com/blog/post-1/">
 
-<meta property="og:title" content="Eleventy lets you gather items together into collections in a variety of ways. - Foobar Site">
+<meta property="og:title" content="The purpose of this article is to make our Angular template code readable and enable a high-caliber performance by following the right practices. It&apos;s very useful to have good practices in place for an Angular template to overcome the future performance-related issues in the enterprise application. - Rooster World Blog">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://blog.rooster-world.com/blog/post-1/">
-<meta property="og:description" content="Eleventy lets you gather items together into collections in a variety of ways.">
-<meta property="og:image" content="https://cdn.gillion.shufflehound.com/wp-content/uploads/sites/14/2017/01/17-585x394.jpg">
+<meta property="og:description" content="The purpose of this article is to make our Angular template code readable and enable a high-caliber performance by following the right practices. It&apos;s very useful to have good practices in place for an Angular template to overcome the future performance-related issues in the enterprise application.">
+<meta property="og:image" content="/src/assets/img/template2.jpg">
 
 <meta name="twitter:card" content="summary">
 
 <meta name="twitter:url" content="https://blog.rooster-world.com/blog/post-1/">
-<meta name="twitter:title" content="Eleventy lets you gather items together into collections in a variety of ways. - Foobar Site">
-<meta name="twitter:description" content="Eleventy lets you gather items together into collections in a variety of ways.">
-<meta name="twitter:image" content="https://cdn.gillion.shufflehound.com/wp-content/uploads/sites/14/2017/01/17-585x394.jpg">
+<meta name="twitter:title" content="The purpose of this article is to make our Angular template code readable and enable a high-caliber performance by following the right practices. It&apos;s very useful to have good practices in place for an Angular template to overcome the future performance-related issues in the enterprise application. - Rooster World Blog">
+<meta name="twitter:description" content="The purpose of this article is to make our Angular template code readable and enable a high-caliber performance by following the right practices. It&apos;s very useful to have good practices in place for an Angular template to overcome the future performance-related issues in the enterprise application.">
+<meta name="twitter:image" content="/src/assets/img/template2.jpg">
 
 
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet"/>
     <link href="/assets/css/style.css" rel="stylesheet"/>
-    <title>Blog posts live in a collection</title>
+    <title>Using Angular in the right way: Template Syntax</title>
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     
     <script>
@@ -98,10 +98,160 @@
     <main>
       
 <div class="container mx-auto blog-post">
-  <h1>g1</h1>
-<p>Eleventy lets you gather items together into collections in a variety of ways. I regularly want to have a set of blog posts so ElevenTail is set up with a collection of posts held in a <code>blog</code> folder.</p>
-<!--more-->
-<p>Posts are markdown files, but could be any other formats supported by Eleventy. And a custom plugin written in JavaScript gives access to the content of the post before and after an excerpt delimiter so that they can be styled differently like this.</p>
+  <p>The purpose of this article is to make our Angular template code readable and enable a high-caliber performance by following the right practices. It's very useful to have good practices in place for an Angular template to overcome the future performance-related issues in the enterprise application.</p>
+<p>In this article we'll learn the most appropriate approach for binding the data with a few common use cases of template syntax binding, and how efficiently we can solve the current/future problems.</p>
+<p>I am assuming that you have a basic understanding of <a href="https://angular.io/guide/template-syntax">Angular Template Syntax</a>.</p>
+<p>Before beginning with the actual use case, let's brush-up Angular interpolation in the template for binding the text.</p>
+<pre><code class="language-html"> Using Angular in the right way: Template Syntax
+</code></pre>
+<pre><code class="language-js">title:string = &quot;Template Syntax Binding&quot;;
+</code></pre>
+<h3>Logical Template Syntax<a href="https://indepth.dev/using-angular-in-the-right-way-template-syntax/#logical-template-syntax">#</a></h3>
+<p>Let's refer to the below code then after discussing in detail:</p>
+<pre><code class="language-html">Percentage 
+</code></pre>
+<p>In the similar fashion of this practice, we usually do a lot in the multiple templates. This arises a code readability, maintainability, and reusability concern on a bigger template because HTML templates are not meant for writing business logic. It's good to write a logical code in the TS file.</p>
+<p>The recommended approach is to create a getter property in the component and use the respective property in the HTML template. Here is the transformed code :</p>
+<pre><code class="language-html">
+</code></pre>
+<pre><code class="language-js">get percentage() {
+ return this.totalMarks / 600;
+}
+</code></pre>
+<p>The above code gives us the opportunity to use the same code in multiple areas: in the template and in the component as well, if necessary.</p>
+<h3>Calling method from Template<a href="https://indepth.dev/using-angular-in-the-right-way-template-syntax/#calling-method-from-template">#</a></h3>
+<p>In my early days of Angular, I was calling the component methods from the Angular template in my smart component. As the data is coming from the parent component, I was comfortable to call the method from the HTML, because this is easier than the other approaches (shortcuts are always useful for developers). One of the code snippet I am putting here.</p>
+<pre><code class="language-html">
+</code></pre>
+<pre><code class="language-js">    @Input() amount:number
+
+    getOffer(amount:number){
+        if(amount &gt; 3500  &amp;&amp; amount &lt; 4999)
+           return `You will get 20% off on 5k purchase`;
+        else if (amount &gt; 5000)
+           return `You will get 30% off on 7k purchase`;
+        else
+           return `5% off on your existing purchase.`;
+	}
+</code></pre>
+<p>There is no problem with the above code, according to the Angular documentation. However, I see a lot of potential issues with this approach. If there is a complex business rule, then the template rendering will take time, and the performance will degrade.</p>
+<p>Let's transform the code:</p>
+<pre><code class="language-html">    
+</code></pre>
+<pre><code class="language-js">    offerMessage: string;
+
+    @Input() set amount(value: number) {
+        let message: string = '';
+        if (value &gt; 5000)
+            message = `You will get 30% off on 7k purchase`;
+        else if (value &gt; 3500 &amp;&amp; value &lt; 4999)
+            message = `You will get 20% off on 5k purchase`;
+        else
+            message = `5% off on your existing purchase.`;
+        this.offerMessage = message;
+    }
+</code></pre>
+<p>As per the above-shown code, we have used the setter method for <code>amount</code> property, whenever the setter method is called at that time it will set the <code>offerMessage</code> based upon the value. So there is no need to call the method from the template. Seems good, but you may think why I have used the setter method if we can achieve the same thing by using the <code>ngOnChanges</code> method. We can, But if the complexity grows then it's difficult to manage a lot of code in the <code>ngOnChanges</code> method with <code>if</code> clauses and somewhere we lose the power of scalable code in TypeScript. It's up to you to decide which one is better for your application as per the complexity. I prefer both approaches based on my component complexity. If I have multiple <code>@Input</code> decorator properties then I would prefer to go with the setter method otherwise happy with the <code>ngOnChanges</code>.</p>
+<p>So far so good.</p>
+<p>As per the above solution we may have a question that <strong>which approach we should choose between getter properties and methods?</strong></p>
+<p>By convention, a method represents an action and a property represents some data. Getter properties are useful where there's no computational complexity, proxying a value of another object or hiding private variables, etc. On the other hand, the methods are useful where our business operation is too expensive or async processes, etc.</p>
+<p>I would like to share one of the use case which is not sufficient for <code>setter</code> / <code>ngOnChanges</code> approach:</p>
+<blockquote>
+<p>The data is coming from the server which returns Student Name, Total Marks and we have to show the Student Name, Grade (computational calculation) in the table.</p>
+</blockquote>
+<p>Again, I preferred to call the method from the template, like below:</p>
+<pre><code class="language-html">&lt;table&gt;
+&lt;tr *ngFor=&quot;let student of students&quot;&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+<pre><code class="language-js">students:any[] = [{ id: 1, name: 'John', marks: 65 }, ...]
+
+getGrade(marks: number) {
+        let grade: string = 'F';
+        if (marks &gt;= 85)
+            grade = 'S'
+        else if (marks &gt; 60 &amp;&amp; marks &lt; 85)
+            grade = 'A'
+        return grade;
+    }
+</code></pre>
+<p>To solve the problem, we should apply <a href="https://en.wikipedia.org/wiki/Single-responsibility_principle">Single Responsibility Principle</a>.</p>
+<p>See the transformed code below:</p>
+<pre><code class="language-html">&lt;td&gt;&lt;/td&gt;
+</code></pre>
+<pre><code class="language-js">students:Student[] = [new Student({ id: 1, name: 'John', marks: 65 }), ...]
+
+</code></pre>
+<pre><code class="language-js">export class Student {
+    constructor(data: Partial&lt;StudentModel&gt;) {
+        this.id = data.id;
+        this.name = data.name;
+        this.grade = this.getGrade(data.marks);
+        this.marks = data.marks;
+    }
+
+    id: number;
+    name: string;
+    marks: number;
+    grade: string;
+
+    private getGrade(marks: number) {
+        let grade: string = 'F';
+        if (marks &gt;= 85)
+            grade = 'S'
+        else if (marks &gt; 60 &amp;&amp; marks &lt; 85)
+            grade = 'A'
+        return grade;
+    }
+}
+</code></pre>
+<p>Let's discuss a few questions you may have.</p>
+<p><strong>Why we have created a class when we can achieve the same thing without class?</strong></p>
+<p>True, we can. But we are losing the benefit of Single Responsibility Principle practices, because other than the class we have to write the code for grade calculation whether in the service class / component / Angular Template, apparently the code become clumsy/duplicate if the same entity is used with minor modification in multiple components with different service classes. Creating a class gives us the power to use the same behavior of the entity in multiple components. This fulfills the need of code maintainability and reusability.</p>
+<blockquote>
+<p>Classes are valuable, this only fits when we may need to initialize the properties and methods to help create objects/process business rules.</p>
+</blockquote>
+<p><strong>Why we haven’t used Pure Pipe?</strong></p>
+<p>Pure pipes are good, this definitely saves our additional looping which is going to be done by following the class approach. But I believe pipes are not meant to cover this kind of case. I will explain this in the upcoming article &quot;Using Angular in the right way: Pipes&quot;.</p>
+<p><strong>Why we are not using memoization in the grading method of the component?</strong></p>
+<p>In simple words, memoization is used for heavy computational logic which can significantly improve the performance and our case is not suitable for memorization. If we go with this approach, it may increase the memory consumption as well as the code complexity, if there are multiple methods to be used in the template.</p>
+<p>So far we are focusing on accessing the Object property instead of the method in the template, but this is not enough for rendering template faster. <strong>Why?</strong></p>
+<p>There are two improvements we can make in this code: bind data with ngFor and apply <code>OnPush</code> change detection strategy.</p>
+<h3>Binding Data with *ngFor<a href="https://indepth.dev/using-angular-in-the-right-way-template-syntax/#binding-data-with-ngfor">#</a></h3>
+<p>After updating the anyone row of student list, the entire list is recomputed. This impacts a performance issue with a larger data. To solve this problem, we can use ```trackBy``` function, which helps Angular to know how to track our element in the student collection, the only modified value will be recomputed and repainted rather than the whole collection. Refer to the modified code below:</p>
+<pre><code class="language-html">&lt;tr *ngFor=&quot;let student of students; trackBy:trackByFn&quot;&gt;
+    &lt;td&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+</code></pre>
+<pre><code class="language-js">    trackByFn(index, item) {
+        return item.id;
+    }
+</code></pre>
+<h3>OnPush Change Detection Strategy<a href="https://indepth.dev/using-angular-in-the-right-way-template-syntax/#onpush-change-detection-strategy">#</a></h3>
+<p>By default, Angular performs change detection on all component everytime something changes in the application, this checks if the value of template expressions have changed. If the component complexity grows then it takes more time to check, but through <code>ChangeDetectionStrategy.OnPush</code> we tell Angular to check only if the references have changed rather than checking for the values of every property. With this approach, we significantly improve the performance and when we want to update an object, the respective object to be propagated to the view.</p>
+<p>With <code>OnPush</code>, change detection runs for the component when:</p>
+<ul>
+<li>The Input reference changes.</li>
+<li>A native DOM event is triggered from the component or one of it's children.</li>
+<li>Change detection is triggered manually through <code>detectChanges</code> method of the <a href="https://angular.io/api/core/ChangeDetectorRef">ChangeDetectorRef</a> class.</li>
+<li>Async pipe observable gets new value.</li>
+</ul>
+<p>Here is the code:</p>
+<pre><code class="language-js">@Component({
+    selector: 'app-product',
+    template: `...`,
+    changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class ProductComponent { ... }
+</code></pre>
+<p>To learn more, please refer to the article by <a href="https://indepth.dev/author/maxkoretskyi/">Max Koretskyi</a>on <a href="https://indepth.dev/these-5-articles-will-make-you-an-angular-change-detection-expert/">Change Detection</a>.</p>
+<h3>Conclusion<a href="https://indepth.dev/using-angular-in-the-right-way-template-syntax/#conclusion">#</a></h3>
+<p>The discussed approach provides the flexibility to modularly assemble our code based upon the specific need. It's good to use object property in the template to make our template code readable and performative as compared to method approach.</p>
+<p>You may have a lot of questions on bindings or reactive forms elegant approach. Wait for the upcoming articles. For Angular Forms, you can refer to the <a href="https://indepth.dev/author/armen/">Armen Vardanyan</a> superb article on <a href="https://indepth.dev/angular-forms-useful-tips/">Angular Forms: Useful Tips</a> and <a href="https://indepth.dev/angular-the-unexpected/">Angular: The unexpected</a>. I liked both articles and I am sure you will learn a lot.</p>
 
 </div>
 
