@@ -7,6 +7,7 @@ collections:
   - name: 'blog'
     label: 'Blog'
     folder: 'src/blog'
+    create: true
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Topic', name: 'topic', widget: 'string' }
