@@ -663,6 +663,13 @@ h3 {
   font-size: 1.5rem;
 }
 
+img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
 /* header */
 
 .menu {

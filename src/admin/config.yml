@@ -1,0 +1,16 @@
+backend:
+  name: git-gateway
+  branch: master # Branch to update
+media_folder: 'src/assets/img'
+
+collections:
+  - name: 'blog'
+    label: 'Blog'
+    folder: 'src/blog'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Topic', name: 'topic', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Featured Image', name: 'image', widget: 'image' }
+      - { label: 'Excerpt', name: 'excerpt', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }

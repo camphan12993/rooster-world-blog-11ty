@@ -8,15 +8,7 @@
     <title>Blog posts live in a collection</title>
     
     <script>
-      
-      function toggleNav() {
-  var mainNav = document.getElementById('nav-menu');
-  var navBtn = document.getElementById('nav-btn');
-  mainNav.classList.toggle('active');
-  navBtn.classList.toggle('open');
-}
-
-    
+      function toggleNav(){var n=document.getElementById("nav-menu"),t=document.getElementById("nav-btn");n.classList.toggle("active"),t.classList.toggle("open")}window.netlifyIdentity&&window.netlifyIdentity.on("init",n=>{n||window.netlifyIdentity.on("login",()=>{document.location.href="/admin/"})});
     </script>
   </head>
   <body>
@@ -81,19 +73,13 @@
 </header>
 
     <main>
-      <div>
-  <p>
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit dolores
-    quam quidem quod! Ducimus blanditiis porro in? Praesentium, reprehenderit
-    nostrum mollitia inventore, modi ipsum saepe velit distinctio, quaerat
-    quisquam numquam?
-  </p>
-</div>
-<div>
+      
+<div class="container mx-auto blog-post">
   <h1>g1</h1>
 <p>Eleventy lets you gather items together into collections in a variety of ways. I regularly want to have a set of blog posts so ElevenTail is set up with a collection of posts held in a <code>blog</code> folder.</p>
 <!--more-->
 <p>Posts are markdown files, but could be any other formats supported by Eleventy. And a custom plugin written in JavaScript gives access to the content of the post before and after an excerpt delimiter so that they can be styled differently like this.</p>
+
 </div>
 
     </main>
