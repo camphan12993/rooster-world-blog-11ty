@@ -1,5 +1,5 @@
+@import 'prism-okaidia.css';
 @tailwind base;
-
 @tailwind components;
 
 /* format */
@@ -73,8 +73,8 @@ img {
 .blog-post pre {
   @apply mb-6 !important;
 }
-.blog-post code {
-  @apply bg-gray-300 px-1 font-light font-mono rounded;
+.blog-post p > code {
+  @apply bg-gray-300 px-1 rounded font-sans italic;
 }
 .blog-post img {
   @apply mb-6;
