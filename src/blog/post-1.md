@@ -1,5 +1,5 @@
 ---
-title: "Using Angular in the right way: Template Syntax"
+title: Using Angular in the right way
 topic: Coding
 date: 2020-01-01
 author: Cam Phan
