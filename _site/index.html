@@ -25,6 +25,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Nunito&amp;display=swap" rel="stylesheet">
     <link href="/assets/css/style.css" rel="stylesheet">
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
     <title>Rooster World</title>
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     
@@ -65,11 +66,11 @@
   
   <article class="sm:w-1/2 lg:w-1/3 px-3 mb-6">
     <div class="overflow-hidden rounded-lg mb-4">
-      <img class="transition duration-300 transform object-cover object-center hover:scale-110 lazyload" src="/src/assets/img/template2.jpg" alt="" loading="lazy" data-src="/src/assets/img/template2.jpg">
+      <img class="transition duration-300 transform object-cover object-center hover:scale-110 lazyload" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAA0JCgsKCA0LCgsODg0PEyAVExISEyccHhcgLikxMC4pLSwzOko+MzZGNywtQFdBRkxOUlNSMj5aYVpQYEpRUk8BDg4OExETJhUVJk81LTVPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT//AABEIAAgADAMBEQACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4+Tl5ufo6ery8/T19vf4+fr/2gAMAwEAAhEDEQA/AOrv71jdm3CSbym9RsOT+PT8DzWL1NklynO6VYTqLsy2k6FrhiA6EkjA56VCiwbTZ//Z" alt="" loading="lazy" data-src="/assets/img/template2.jpg" width="1000" height="664">
     </div>
     <p class="uppercase text-orange-400 text-sm">Coding</p>
     <a href="/blog/post-1/" class="block text-3xl mb-3 leading-10 hover:opacity-50">
-      Using Angular in the right way: Template Syntax
+      Using Angular in the right way
     </a>
     <p class="text-sm font-light italic mb-2">
       The purpose of this article is to make our Angular template code readable and enable a high-caliber performance by following the right practices. It's very useful to have good practices in place for an Angular template to overcome the future performance-related issues in the enterprise application.
@@ -99,7 +100,7 @@
   
   <article class="sm:w-1/2 lg:w-1/3 px-3 mb-6">
     <div class="overflow-hidden rounded-lg mb-4">
-      <img class="transition duration-300 transform object-cover object-center hover:scale-110 lazyload" src="/src/assets/img/template2.jpg" alt="" loading="lazy" data-src="/src/assets/img/template2.jpg">
+      <img class="transition duration-300 transform object-cover object-center hover:scale-110 lazyload" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAA0JCgsKCA0LCgsODg0PEyAVExISEyccHhcgLikxMC4pLSwzOko+MzZGNywtQFdBRkxOUlNSMj5aYVpQYEpRUk8BDg4OExETJhUVJk81LTVPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT//AABEIAAgADAMBEQACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4+Tl5ufo6ery8/T19vf4+fr/2gAMAwEAAhEDEQA/AOrv71jdm3CSbym9RsOT+PT8DzWL1NklynO6VYTqLsy2k6FrhiA6EkjA56VCiwbTZ//Z" alt="" loading="lazy" data-src="/assets/img/template2.jpg" width="1000" height="664">
     </div>
     <p class="uppercase text-orange-400 text-sm">Coding</p>
     <a href="/blog/test-blog/" class="block text-3xl mb-3 leading-10 hover:opacity-50">
@@ -111,6 +112,23 @@
     <div>
       <a href="#" class="underline text-blue-800"></a>
       <span class="text-sm italic font-thin">Thu Jul 09 2020 10:46:29 GMT+0700 (Indochina Time)</span>
+    </div>
+  </article>
+  
+  <article class="sm:w-1/2 lg:w-1/3 px-3 mb-6">
+    <div class="overflow-hidden rounded-lg mb-4">
+      <img class="transition duration-300 transform object-cover object-center hover:scale-110 lazyload" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAA0JCgsKCA0LCgsODg0PEyAVExISEyccHhcgLikxMC4pLSwzOko+MzZGNywtQFdBRkxOUlNSMj5aYVpQYEpRUk8BDg4OExETJhUVJk81LTVPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT//AABEIAAgADAMBEQACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4+Tl5ufo6ery8/T19vf4+fr/2gAMAwEAAhEDEQA/AOrv71jdm3CSbym9RsOT+PT8DzWL1NklynO6VYTqLsy2k6FrhiA6EkjA56VCiwbTZ//Z" alt="" loading="lazy" data-src="/assets/img/template2.jpg" width="1000" height="664">
+    </div>
+    <p class="uppercase text-orange-400 text-sm">Desgin</p>
+    <a href="/blog/test-test/" class="block text-3xl mb-3 leading-10 hover:opacity-50">
+      Test test
+    </a>
+    <p class="text-sm font-light italic mb-2">
+      yeal
+    </p>
+    <div>
+      <a href="#" class="underline text-blue-800"></a>
+      <span class="text-sm italic font-thin">Thu Jul 09 2020 11:09:00 GMT+0700 (Indochina Time)</span>
     </div>
   </article>
   

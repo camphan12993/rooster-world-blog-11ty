@@ -3,6 +3,7 @@ const htmlmin = require('html-minifier');
 const lazyImagesPlugin = require('eleventy-plugin-lazyimages');
 const pluginSEO = require('eleventy-plugin-seo');
 const isProd = process.env.NODE_ENV == 'production';
+const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
 module.exports = function (config) {
   if (isProd) {
@@ -48,6 +49,8 @@ module.exports = function (config) {
     url: 'https://blog.rooster-world.com',
     author: 'Cam Phan',
   });
+
+  config.addPlugin(syntaxHighlight);
 
   config.addPassthroughCopy('src/assets');
   config.addPassthroughCopy('src/admin');

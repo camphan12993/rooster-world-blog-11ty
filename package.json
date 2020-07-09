@@ -23,6 +23,7 @@
   "homepage": "https://github.com/camphan12993/rooster-world-blog-11ty#readme",
   "dependencies": {
     "@11ty/eleventy": "^0.11.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
     "@fullhuman/postcss-purgecss": "^2.3.0",
     "autoprefixer": "^9.8.4",
     "cssnano": "^4.1.10",

@@ -10,6 +10,7 @@ excerpt: The purpose of this article is to make our Angular template code
   template to overcome the future performance-related issues in the enterprise
   application.
 ---
+
 The purpose of this article is to make our Angular template code readable and enable a high-caliber performance by following the right practices. It's very useful to have good practices in place for an Angular template to overcome the future performance-related issues in the enterprise application.
 
 In this article we'll learn the most appropriate approach for binding the data with a few common use cases of template syntax binding, and how efficiently we can solve the current/future problems.
@@ -18,33 +19,31 @@ I am assuming that you have a basic understanding of [Angular Template Syntax](h
 
 Before beginning with the actual use case, let's brush-up Angular interpolation in the template for binding the text.
 
-```javascript
-{{title}}
+```html
+{{ "{{ string "}} }}
 ```
 
-
-
-```javascript
+```js
 title: string = 'Template Syntax Binding';
 ```
 
-### Logical Template Syntax[\#](https://indepth.dev/using-angular-in-the-right-way-template-syntax/#logical-template-syntax)
+### Logical Template Syntax
 
 Let's refer to the below code then after discussing in detail:
 
-```javascript
-Percentage {{ totalMarks / 600 }}
+```html
+Percentage {{"{{ totalMarks / 600 "}}}}
 ```
 
 In the similar fashion of this practice, we usually do a lot in the multiple templates. This arises a code readability, maintainability, and reusability concern on a bigger template because HTML templates are not meant for writing business logic. It's good to write a logical code in the TS file.
 
 The recommended approach is to create a getter property in the component and use the respective property in the HTML template. Here is the transformed code :
 
-```javascript
-{{percentage}}
+```html
+{{"{{percentage"}}}}
 ```
 
-```javascript
+```js
 get percentage() {
  return this.totalMarks / 600;
 }
@@ -52,15 +51,15 @@ get percentage() {
 
 The above code gives us the opportunity to use the same code in multiple areas: in the template and in the component as well, if necessary.
 
-### Calling method from Template[\#](https://indepth.dev/using-angular-in-the-right-way-template-syntax/#calling-method-from-template)
+### Calling method from Template
 
 In my early days of Angular, I was calling the component methods from the Angular template in my smart component. As the data is coming from the parent component, I was comfortable to call the method from the HTML, because this is easier than the other approaches (shortcuts are always useful for developers). One of the code snippet I am putting here.
 
-```javascript
-{{getOffer(amount)}}
+```html
+{{"{{getOffer(amount)"}}}}
 ```
 
-```javascript
+```js
     @Input() amount:number
 
     getOffer(amount:number){
@@ -77,11 +76,11 @@ There is no problem with the above code, according to the Angular documentation.
 
 Let's transform the code:
 
-```javascript
-{{offerMessage}}
+```html
+{{"{{offerMessage"}}}}
 ```
 
-```javascript
+```js
     offerMessage: string;
 
     @Input() set amount(value: number) {
@@ -119,7 +118,7 @@ Again, I preferred to call the method from the template, like below:
 </table>
 ```
 
-```javascript
+```js
 students:any[] = [{ id: 1, name: 'John', marks: 65 }, ...]
 
 getGrade(marks: number) {
@@ -140,11 +139,12 @@ See the transformed code below:
 <td>{{student.grade}}</td>
 ```
 
-```javascript
+```js
 students:Student[] = [new Student({ id: 1, name: 'John', marks: 65 }), ...]
+
 ```
 
-```javascript
+```js
 export class Student {
     constructor(data: Partial<StudentModel>) {
         this.id = data.id;
@@ -189,7 +189,7 @@ So far we are focusing on accessing the Object property instead of the method in
 
 There are two improvements we can make in this code: bind data with ngFor and apply `OnPush` change detection strategy.
 
-### Binding Data with *ngFor[\#](https://indepth.dev/using-angular-in-the-right-way-template-syntax/#binding-data-with-ngfor)
+### Binding Data with \*ngFor
 
 After updating the anyone row of student list, the entire list is recomputed. This impacts a performance issue with a larger data. To solve this problem, we can use \`\`\`trackBy\`\`\` function, which helps Angular to know how to track our element in the student collection, the only modified value will be recomputed and repainted rather than the whole collection. Refer to the modified code below:
 
@@ -200,26 +200,26 @@ After updating the anyone row of student list, the entire list is recomputed. Th
 </tr>
 ```
 
-```javascript
+```js
     trackByFn(index, item) {
         return item.id;
     }
 ```
 
-### OnPush Change Detection Strategy[\#](https://indepth.dev/using-angular-in-the-right-way-template-syntax/#onpush-change-detection-strategy)
+### OnPush Change Detection Strategy
 
 By default, Angular performs change detection on all component everytime something changes in the application, this checks if the value of template expressions have changed. If the component complexity grows then it takes more time to check, but through `ChangeDetectionStrategy.OnPush` we tell Angular to check only if the references have changed rather than checking for the values of every property. With this approach, we significantly improve the performance and when we want to update an object, the respective object to be propagated to the view.
 
 With `OnPush`, change detection runs for the component when:
 
-* The Input reference changes.
-* A native DOM event is triggered from the component or one of it's children.
-* Change detection is triggered manually through `detectChanges` method of the [ChangeDetectorRef](https://angular.io/api/core/ChangeDetectorRef) class.
-* Async pipe observable gets new value.
+- The Input reference changes.
+- A native DOM event is triggered from the component or one of it's children.
+- Change detection is triggered manually through `detectChanges` method of the [ChangeDetectorRef](https://angular.io/api/core/ChangeDetectorRef) class.
+- Async pipe observable gets new value.
 
 Here is the code:
 
-```javascript
+```js
 @Component({
     selector: 'app-product',
     template: `...`,
@@ -230,7 +230,7 @@ export class ProductComponent { ... }
 
 To learn more, please refer to the article by [Max Koretskyi](https://indepth.dev/author/maxkoretskyi/)on [Change Detection](https://indepth.dev/these-5-articles-will-make-you-an-angular-change-detection-expert/).
 
-### Conclusion[\#](https://indepth.dev/using-angular-in-the-right-way-template-syntax/#conclusion)
+### Conclusion
 
 The discussed approach provides the flexibility to modularly assemble our code based upon the specific need. It's good to use object property in the template to make our template code readable and performative as compared to method approach.
 
