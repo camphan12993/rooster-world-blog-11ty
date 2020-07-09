@@ -5,7 +5,6 @@ date: '2020-01-01'
 author: 'Cam Phan'
 image: 'https://cdn.gillion.shufflehound.com/wp-content/uploads/sites/14/2017/01/17-585x394.jpg'
 excerpt: 'Eleventy lets you gather items together into collections in a variety of ways.'
-ogtype: website
 ---
 
 # g1

@@ -2,9 +2,10 @@ const terser = require('terser');
 const htmlmin = require('html-minifier');
 const lazyImagesPlugin = require('eleventy-plugin-lazyimages');
 const pluginSEO = require('eleventy-plugin-seo');
+const isProd = process.env.NODE_ENV == 'production';
 
 module.exports = function (config) {
-  if (process.env.NODE_ENV == 'production') {
+  if (isProd) {
     config.addTransform('htmlmin', function (content, outputPath) {
       if (outputPath.endsWith('.html')) {
         let minified = htmlmin.minify(content, {
@@ -44,7 +45,7 @@ module.exports = function (config) {
   config.addPlugin(pluginSEO, {
     title: 'Foobar Site',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    url: 'https://foo.com',
+    url: 'https://blog.rooster-world.com',
     author: 'Jane Doe',
     author: 'username',
     image: 'foo.jpg',
