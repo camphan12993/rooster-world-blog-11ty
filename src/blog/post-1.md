@@ -10,7 +10,6 @@ excerpt: The purpose of this article is to make our Angular template code
   template to overcome the future performance-related issues in the enterprise
   application.
 ---
-
 The purpose of this article is to make our Angular template code readable and enable a high-caliber performance by following the right practices. It's very useful to have good practices in place for an Angular template to overcome the future performance-related issues in the enterprise application.
 
 In this article we'll learn the most appropriate approach for binding the data with a few common use cases of template syntax binding, and how efficiently we can solve the current/future problems.
@@ -19,11 +18,13 @@ I am assuming that you have a basic understanding of [Angular Template Syntax](h
 
 Before beginning with the actual use case, let's brush-up Angular interpolation in the template for binding the text.
 
-```html
+```javascript
 {{title}}
 ```
 
-```js
+
+
+```javascript
 title: string = 'Template Syntax Binding';
 ```
 
@@ -31,7 +32,7 @@ title: string = 'Template Syntax Binding';
 
 Let's refer to the below code then after discussing in detail:
 
-```html
+```javascript
 Percentage {{ totalMarks / 600 }}
 ```
 
@@ -39,11 +40,11 @@ In the similar fashion of this practice, we usually do a lot in the multiple tem
 
 The recommended approach is to create a getter property in the component and use the respective property in the HTML template. Here is the transformed code :
 
-```html
+```javascript
 {{percentage}}
 ```
 
-```js
+```javascript
 get percentage() {
  return this.totalMarks / 600;
 }
@@ -55,11 +56,11 @@ The above code gives us the opportunity to use the same code in multiple areas: 
 
 In my early days of Angular, I was calling the component methods from the Angular template in my smart component. As the data is coming from the parent component, I was comfortable to call the method from the HTML, because this is easier than the other approaches (shortcuts are always useful for developers). One of the code snippet I am putting here.
 
-```html
+```javascript
 {{getOffer(amount)}}
 ```
 
-```js
+```javascript
     @Input() amount:number
 
     getOffer(amount:number){
@@ -76,11 +77,11 @@ There is no problem with the above code, according to the Angular documentation.
 
 Let's transform the code:
 
-```html
+```javascript
 {{offerMessage}}
 ```
 
-```js
+```javascript
     offerMessage: string;
 
     @Input() set amount(value: number) {
@@ -118,7 +119,7 @@ Again, I preferred to call the method from the template, like below:
 </table>
 ```
 
-```js
+```javascript
 students:any[] = [{ id: 1, name: 'John', marks: 65 }, ...]
 
 getGrade(marks: number) {
@@ -139,12 +140,11 @@ See the transformed code below:
 <td>{{student.grade}}</td>
 ```
 
-```js
+```javascript
 students:Student[] = [new Student({ id: 1, name: 'John', marks: 65 }), ...]
-
 ```
 
-```js
+```javascript
 export class Student {
     constructor(data: Partial<StudentModel>) {
         this.id = data.id;
@@ -189,7 +189,7 @@ So far we are focusing on accessing the Object property instead of the method in
 
 There are two improvements we can make in this code: bind data with ngFor and apply `OnPush` change detection strategy.
 
-### Binding Data with \*ngFor[\#](https://indepth.dev/using-angular-in-the-right-way-template-syntax/#binding-data-with-ngfor)
+### Binding Data with *ngFor[\#](https://indepth.dev/using-angular-in-the-right-way-template-syntax/#binding-data-with-ngfor)
 
 After updating the anyone row of student list, the entire list is recomputed. This impacts a performance issue with a larger data. To solve this problem, we can use \`\`\`trackBy\`\`\` function, which helps Angular to know how to track our element in the student collection, the only modified value will be recomputed and repainted rather than the whole collection. Refer to the modified code below:
 
@@ -200,7 +200,7 @@ After updating the anyone row of student list, the entire list is recomputed. Th
 </tr>
 ```
 
-```js
+```javascript
     trackByFn(index, item) {
         return item.id;
     }
@@ -212,14 +212,14 @@ By default, Angular performs change detection on all component everytime somethi
 
 With `OnPush`, change detection runs for the component when:
 
-- The Input reference changes.
-- A native DOM event is triggered from the component or one of it's children.
-- Change detection is triggered manually through `detectChanges` method of the [ChangeDetectorRef](https://angular.io/api/core/ChangeDetectorRef) class.
-- Async pipe observable gets new value.
+* The Input reference changes.
+* A native DOM event is triggered from the component or one of it's children.
+* Change detection is triggered manually through `detectChanges` method of the [ChangeDetectorRef](https://angular.io/api/core/ChangeDetectorRef) class.
+* Async pipe observable gets new value.
 
 Here is the code:
 
-```js
+```javascript
 @Component({
     selector: 'app-product',
     template: `...`,
