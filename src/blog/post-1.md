@@ -3,13 +3,14 @@ title: Using Angular in the right way
 topic: Coding
 date: 2020-01-01
 author: Cam Phan
-image: /src/assets/img/template2.jpg
+image: /assets/img/template2.jpg
 excerpt: The purpose of this article is to make our Angular template code
   readable and enable a high-caliber performance by following the right
   practices. It's very useful to have good practices in place for an Angular
   template to overcome the future performance-related issues in the enterprise
   application.
 ---
+
 The purpose of this article is to make our Angular template code readable and enable a high-caliber performance by following the right practices. It's very useful to have good practices in place for an Angular template to overcome the future performance-related issues in the enterprise application.
 
 In this article we'll learn the most appropriate approach for binding the data with a few common use cases of template syntax binding, and how efficiently we can solve the current/future problems.
@@ -19,13 +20,11 @@ I am assuming that you have a basic understanding of [Angular Template Syntax](h
 Before beginning with the actual use case, let's brush-up Angular interpolation in the template for binding the text.
 
 ```html
- {{title}}
+{{title}}
 ```
 
-
-
 ```js
-title:string = "Template Syntax Binding";
+title: string = 'Template Syntax Binding';
 ```
 
 ### Logical Template Syntax[\#](https://indepth.dev/using-angular-in-the-right-way-template-syntax/#logical-template-syntax)
@@ -78,7 +77,7 @@ There is no problem with the above code, according to the Angular documentation.
 Let's transform the code:
 
 ```html
-    {{offerMessage}}
+{{offerMessage}}
 ```
 
 ```js
@@ -112,10 +111,10 @@ Again, I preferred to call the method from the template, like below:
 
 ```html
 <table>
-<tr *ngFor="let student of students">
-<td>{{student.name}}</td>
-<td>{{getGrade(student)}}</td>
-</tr>
+  <tr *ngFor="let student of students">
+    <td>{{student.name}}</td>
+    <td>{{getGrade(student)}}</td>
+  </tr>
 </table>
 ```
 
@@ -190,15 +189,15 @@ So far we are focusing on accessing the Object property instead of the method in
 
 There are two improvements we can make in this code: bind data with ngFor and apply `OnPush` change detection strategy.
 
-### Binding Data with *ngFor[\#](https://indepth.dev/using-angular-in-the-right-way-template-syntax/#binding-data-with-ngfor)
+### Binding Data with \*ngFor[\#](https://indepth.dev/using-angular-in-the-right-way-template-syntax/#binding-data-with-ngfor)
 
 After updating the anyone row of student list, the entire list is recomputed. This impacts a performance issue with a larger data. To solve this problem, we can use \`\`\`trackBy\`\`\` function, which helps Angular to know how to track our element in the student collection, the only modified value will be recomputed and repainted rather than the whole collection. Refer to the modified code below:
 
 ```html
 <tr *ngFor="let student of students; trackBy:trackByFn">
-    <td>{{student.name}}</td>
-    <td>{{student.grade}}</td>
-  </tr>
+  <td>{{student.name}}</td>
+  <td>{{student.grade}}</td>
+</tr>
 ```
 
 ```js
@@ -213,10 +212,10 @@ By default, Angular performs change detection on all component everytime somethi
 
 With `OnPush`, change detection runs for the component when:
 
-* The Input reference changes.
-* A native DOM event is triggered from the component or one of it's children.
-* Change detection is triggered manually through `detectChanges` method of the [ChangeDetectorRef](https://angular.io/api/core/ChangeDetectorRef) class.
-* Async pipe observable gets new value.
+- The Input reference changes.
+- A native DOM event is triggered from the component or one of it's children.
+- Change detection is triggered manually through `detectChanges` method of the [ChangeDetectorRef](https://angular.io/api/core/ChangeDetectorRef) class.
+- Async pipe observable gets new value.
 
 Here is the code:
 
