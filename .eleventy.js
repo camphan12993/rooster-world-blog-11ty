@@ -4,6 +4,7 @@ const lazyImagesPlugin = require('eleventy-plugin-lazyimages');
 const pluginSEO = require('eleventy-plugin-seo');
 const isProd = process.env.NODE_ENV == 'production';
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
+const cleanCSS = require('clean-css');
 
 module.exports = function (config) {
   if (isProd) {
@@ -40,6 +41,10 @@ module.exports = function (config) {
     }
 
     return minified.code;
+  });
+
+  config.addFilter('cssmin', function (code) {
+    return new cleanCSS({}).minify(code).styles;
   });
 
   // SEO

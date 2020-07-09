@@ -5,8 +5,15 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     {% seo %}
     <link href="/assets/css/style.css" rel="stylesheet"/>
+    {% capture prism %}
+      {% include css/prism-okaidia.css %}
+    {% endcapture %}
+    <style>
+      {{ prism | cssmin | safe }}
+    </style>
     <title>{{ title }}</title>
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    prism-okaidia
     {% capture js %}
       {% include js/main.js %}
     {% endcapture %}
