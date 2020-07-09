@@ -1,6 +1,7 @@
 const terser = require('terser');
 const htmlmin = require('html-minifier');
 const lazyImagesPlugin = require('eleventy-plugin-lazyimages');
+const pluginSEO = require('eleventy-plugin-seo');
 
 module.exports = function (config) {
   if (process.env.NODE_ENV == 'production') {
@@ -37,6 +38,16 @@ module.exports = function (config) {
     }
 
     return minified.code;
+  });
+
+  // SEO
+  config.addPlugin(pluginSEO, {
+    title: 'Foobar Site',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    url: 'https://foo.com',
+    author: 'Jane Doe',
+    author: 'username',
+    image: 'foo.jpg',
   });
 
   config.addPassthroughCopy('src/assets/css');
