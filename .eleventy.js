@@ -43,12 +43,10 @@ module.exports = function (config) {
 
   // SEO
   config.addPlugin(pluginSEO, {
-    title: 'Foobar Site',
+    title: 'Rooster World Blog',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     url: 'https://blog.rooster-world.com',
-    author: 'Jane Doe',
-    author: 'username',
-    image: 'foo.jpg',
+    author: 'Cam Phan',
   });
 
   config.addPassthroughCopy('src/assets/css');
