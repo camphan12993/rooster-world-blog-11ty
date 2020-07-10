@@ -58,9 +58,11 @@ module.exports = function (config) {
     title: 'Rooster World Blog',
     url: 'https://blog.rooster-world.com',
     author: 'Cam Phan',
+    description: 'Rooster World Blog',
     options: {
       titleDivider: '|',
     },
+    image: '/assets/img/3d-printing.jpg',
   });
 
   config.addPlugin(syntaxHighlight);
