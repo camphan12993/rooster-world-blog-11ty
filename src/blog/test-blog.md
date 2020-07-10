@@ -1,9 +1,9 @@
 ---
-title: Test Blog
-topic: Coding
-date: 2020-07-09T03:46:29.032Z
+title: Some page title
+excerpt: Some page excerpt
+author: Jane Doe
 image: /assets/img/template2.jpg
-excerpt: Hahaha
+ogtype: website
 ---
 
 Oh yeah

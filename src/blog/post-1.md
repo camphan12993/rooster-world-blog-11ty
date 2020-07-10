@@ -1,14 +1,15 @@
 ---
 title: Using Angular in the right way
-topic: Coding
-date: 2020-01-01
-author: Cam Phan
-image: /assets/img/template2.jpg
 excerpt: The purpose of this article is to make our Angular template code
   readable and enable a high-caliber performance by following the right
   practices. It's very useful to have good practices in place for an Angular
   template to overcome the future performance-related issues in the enterprise
   application.
+topic: Coding
+date: 2020-01-01
+author: Cam Phan
+image: /assets/img/template2.jpg
+ogtype: website
 ---
 
 The purpose of this article is to make our Angular template code readable and enable a high-caliber performance by following the right practices. It's very useful to have good practices in place for an Angular template to overcome the future performance-related issues in the enterprise application.

@@ -1,5 +1,4 @@
 {
   "layout": "layouts/post.liquid",
-  "tags": "post",
-  "templateEngineOverride": "njk,md"
+  "tags": "post"
 }

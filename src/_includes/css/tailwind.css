@@ -58,19 +58,15 @@ img {
 }
 
 /* post  */
-.blog-post h1 {
-  @apply mb-8;
-}
-
 .blog-post h3,
 .blog-post h2 {
   @apply mt-10;
 }
 .blog-post p {
-  @apply mb-4 leading-loose;
+  @apply mb-3 leading-loose;
 }
 .blog-post pre {
-  @apply mb-6 !important;
+  @apply mb-4 !important;
 }
 .blog-post p > code {
   @apply bg-gray-300 px-1 rounded font-sans italic;
