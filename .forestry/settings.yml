@@ -8,7 +8,7 @@ sections:
   path: src/blog
   label: Blogs
   create: all
-  match: "**/*.md"
+  match: "**/*"
 upload_dir: src/assets/img
 public_path: "/assets/img"
 front_matter_path: ''
