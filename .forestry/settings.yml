@@ -9,6 +9,7 @@ sections:
   label: Blogs
   create: all
   match: "**/*"
+  new_doc_ext: ".md"
 upload_dir: src/assets/img
 public_path: "/assets/img"
 front_matter_path: ''
