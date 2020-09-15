@@ -1,5 +1,5 @@
 ---
-title: Using Angular in the right way
+title: Using Angular in the right wa
 excerpt: The purpose of this article is to make our Angular template code
   readable and enable a high-caliber performance by following the right
   practices. It's very useful to have good practices in place for an Angular
