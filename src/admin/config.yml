@@ -1,8 +1,13 @@
 backend:
-  name: git-gateway
+  name: 'github'
+  repo: 'camphan12993/rooster-world-landing-11ty'
   branch: master # Branch to update
+site_url: 'http://rooster-world-blog.s3-website.us-east-2.amazonaws.com'
 media_folder: 'src/assets/img'
 public_folder: '/assets/img'
+base_url: 'https://api.netlify.com'
+auth_endpoint: 'auth'
+api_root: 'https://api.github.com'
 
 collections:
   - name: 'blog'
