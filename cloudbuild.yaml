@@ -5,8 +5,13 @@ steps:
   # Build
   - name: 'gcr.io/cloud-builders/npm'
     args: ['run', 'build']
-  - name: gcr.io/cloud-builders/gcloud:latest
-    entrypoint: 'ls'
-    args: ['-lah', '/workspace']
   - name: gcr.io/cloud-builders/gsutil
-    args: ['-m', 'rsync', '-r', '-d', './public', 'gs://test-web-blog']
+    args:
+      [
+        '-m',
+        'rsync',
+        '-r',
+        '-d',
+        '/workspace/test/public',
+        'gs://test-web-blog',
+      ]
