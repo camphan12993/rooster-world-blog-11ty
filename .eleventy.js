@@ -72,6 +72,7 @@ module.exports = function (config) {
 	return {
 		dir: {
 			input: "src",
+			output: "public"
 		},
 		passthroughFileCopy: true,
 		templateFormats: ["html", "md", "liquid"],
