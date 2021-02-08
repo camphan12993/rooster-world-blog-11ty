@@ -1,9 +1,9 @@
 steps:
   # Install
-  - name: "gcr.io/cloud-builders/npm"
-    args: ["install"]
+  - name: 'gcr.io/cloud-builders/npm'
+    args: ['install']
   # Build
-  - name: "gcr.io/cloud-builders/npm"
-    args: ["run", "build"]
+  - name: 'gcr.io/cloud-builders/npm'
+    args: ['run', 'build']
   - name: gcr.io/cloud-builders/gsutil
-    args: ["-m", "rsync", "-r", "-c", "-d", "./\x70\x75\x62\x6c\x69\x63", "gs://test-web-blog"]
+    args: ['-m', 'cp', '-r', '-c', '-d', './public', 'gs://test-web-blog']
