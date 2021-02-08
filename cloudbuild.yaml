@@ -6,5 +6,4 @@ steps:
   - name: 'gcr.io/cloud-builders/npm'
     args: ['run', 'build']
   - name: gcr.io/cloud-builders/gsutil
-    args:
-      ['-m', 'rsync', '-r', '-c', '-d', '-z', './public', 'gs://test-web-blog']
+    args: ['-m', 'rsync', '-r', '-c', '-d', './public', 'gs://test-web-blog']
