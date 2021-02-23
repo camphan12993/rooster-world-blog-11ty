@@ -8,4 +8,4 @@ steps:
       - 'NODE_ENV=production'
     args: ['run', 'build']
   - name: gcr.io/cloud-builders/gsutil
-    args: ['-m', 'rsync', '-e', '-r', '-d', './public', 'gs://test-web-blog']
+    args: ['-m', 'rsync', '-e', '-r', '-d', 'public', 'gs://test-web-blog']
