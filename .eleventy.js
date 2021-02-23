@@ -8,7 +8,6 @@ const cleanCSS = require('clean-css');
 const moment = require('moment');
 
 module.exports = function (config) {
-  console.log(process.env.NODE_ENV);
   if (isProd) {
     config.addTransform('htmlmin', function (content, outputPath) {
       if (outputPath.endsWith('.html')) {
